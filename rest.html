@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资源网站 this is demo</title>
+    <link rel="stylesheet" type="text/css" href="asset/dist/reset.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/site.css">
+
+    <link rel="stylesheet" type="text/css" href="asset/dist/container.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/grid.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/header.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/image.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/menu.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/divider.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/segment.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/form.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/input.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/button.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/list.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/message.css">
+    <link rel="stylesheet" type="text/css" href="asset/dist/icon.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/index.css">
+    <style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
+        body > .grid {
+            height: 100%;
+        }
+        .image {
+            margin-top: -100px;
+        }
+        .column {
+            max-width: 450px;
+        }
+    </style>
+</head>
+<body>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui teal image header">
+            <img src="asset/images/logo.png" class="image">
+            <div class="content">
+                找回您的密码
+            </div>
+        </h2>
+        <form class="ui large form">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" placeholder="请输入您注册的邮箱地址">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input guid">
+                        <i class="bell icon"></i>
+                        <input autocomplete="off" type="text" name="password" placeholder="请输入验证码">
+                        <img src="asset/images/code.jpg" class="verification" height="38">
+                    </div>
+                </div>
+                <div class="ui fluid large teal submit button">开始重设密码</div>
+            </div>
+
+            <div class="ui error message"></div>
+
+        </form>
+
+        <div class="ui message">
+            我还记得密码！我还想再<a href="login.html">试试</a>！
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script src="asset/js/jquery.min.js"></script>
+<script src="asset/js/form.js"></script>
+<script src="asset/js/transition.js"></script>
+<script>
+    $(document)
+        .ready(function() {
+            $('.ui.form')
+                .form({
+                    fields: {
+                        email: {
+                            identifier  : 'email',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : '请输入您的电子邮件!'
+                                },
+                                {
+                                    type   : 'email',
+                                    prompt : '请输入有效的电子邮件!'
+                                }
+                            ]
+                        },
+                        password: {
+                            identifier  : 'password',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : '请输入您的密码!'
+                                },
+                                {
+                                    type   : 'length[6]',
+                                    prompt : '密码必须至少为6个字符!'
+                                }
+                            ]
+                        }
+                    }
+                })
+            ;
+        })
+    ;
+</script>
+</html>

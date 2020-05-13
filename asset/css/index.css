@@ -1,6 +1,25 @@
 body{
-    min-height:100vh;
-    background-color:#fff;
+    padding: 0;
+    display: block;
+}
+div{
+    display: block;
+}
+.body{
+    min-width:1190px;
+    max-width: 1200px;
+    background-color: #fafafa;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+.header{
+    height: auto;
+    text-align: left;
+    margin: auto;
+}
+.weather{
+    float: right;
 }
 .verification{
     margin-left: 10px;
